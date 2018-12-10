@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <!--
 	Broadcast by TEMPLATED
@@ -57,7 +59,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a href="view" class="link"><span>Click Me</span></a>
+										<a id="venom" href="#" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -66,7 +68,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a href="view" class="link"><span>Click Me</span></a>
+										<a id="amsoo" href="view" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -75,7 +77,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a href="view" class="link"><span>Click Me</span></a>
+										<a id="singleman" href="view" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -84,7 +86,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a href="view" class="link"><span>Click Me</span></a>
+										<a id="chang" href="view" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -97,7 +99,7 @@
 										<p class="caption">Nam eu nisi non ante sodales interdum a
 											vitae neque</p>
 											 -->
-										<a href="view" class="link"><span>Click Me</span></a>
+										<a id="twofriends" href="view" class="link"><span>Click Me</span></a>
 									</div>
 
 								</div>
@@ -177,12 +179,19 @@
 				moveSlides : 1,
 			});
 		</script>
-		<script type="text/javascript">
-			window.onload = function(){
-				document.getElementById("asdasd").onclick = function(){
-					System.out.println("asdasdasd");
-				}
-			}
+		<script>
+			$(document).ready(function() {
+				$("a").click(function(event) {
+					var click_id = $(this).attr('id');
+					var videoAddr;
+					if(click_id == "venom"){
+						location.href = 'view';
+					}
+					else if(click_id == "amsoo"){
+						alert('amsoo');
+					}
+				});
+			});
 		</script>
 	</form>
 </body>
