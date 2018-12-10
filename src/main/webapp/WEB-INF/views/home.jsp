@@ -9,9 +9,19 @@
 <title>Broadcast by TEMPLATED</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <link rel="stylesheet" href="assets/css/main.css" />
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/suggest.js" type="text/javascript"></script>
 </head>
 <body>
+	<form name="suggest" action="/dev/suggest.do"></form>
 	<form action="home">
 		<!-- Header -->
 		<header id="header">
@@ -32,7 +42,7 @@
 
 		<!-- Banner -->
 		<!--
-				To use a video as your background, set data-video to the name of your video without
+				To use a video as your background, set data-video to the name of your video without 
 				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
 				formats to work correctly.
 			-->
@@ -402,16 +412,9 @@
 				</ul>
 				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
 				Images: <a href="https://unsplash.com">Coverr</a>. Video: <a
-					href="https://coverr.co">Coverr</a>.
+					href="https://coverr.co">Coverr</a>
 			</div>
 		</footer>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
 	</form>
 </body>
 </html>
