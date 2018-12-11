@@ -9,6 +9,7 @@ public class VideoBean {
 	private String genre;
 	private int image_number;
 	private int grade;
+	private int rank;
 	
 	public int getVideo_id() {
 		return video_id;
@@ -58,5 +59,11 @@ public class VideoBean {
 	}
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 }
