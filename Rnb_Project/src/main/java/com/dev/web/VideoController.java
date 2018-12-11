@@ -25,11 +25,11 @@ public class VideoController {
 	@RequestMapping(value = "main.do")
 	public ModelAndView mainStart() {
 		ModelAndView modelAndView = new ModelAndView();
-		/*List<VideoBean> gmain1 = video.suggestGrade1();
+		List<VideoBean> gmain1 = video.suggestGrade1();
 		List<VideoBean> gmain2 = video.suggestGrade2();
 				
 		modelAndView.addObject("gmain1", gmain1);
-		modelAndView.addObject("gmain2", gmain2);*/
+		modelAndView.addObject("gmain2", gmain2);
 		modelAndView.setViewName("home");
 	
 		return modelAndView;

@@ -72,7 +72,7 @@
 						<c:forEach items="${gmain1 }" var="gm1">
 							<div class="video col">
 								<div class="image fit">
-									<img src="movieImage/${gm1.image_number }" alt="" />
+									<img src="movieImage/${gm1.image_number }" alt="" style="width: 670px; height: 600px;"/>
 									<div class="arrow">
 										<div class="icon fa-play"></div>
 									</div>
@@ -85,7 +85,7 @@
 						<c:forEach items="${gmain2 }" var="gm2">
 							<div class="video col">
 								<div class="image fit">
-									<img src="movieImage/${gm2.image_number }" alt="" />
+									<img src="movieImage/${gm2.image_number }" alt="" style="width: 670px; height: 600px;"/>
 									<div class="arrow">
 										<div class="icon fa-play"></div>
 									</div>
