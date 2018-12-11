@@ -39,8 +39,8 @@
 				<div class="inner">
 					<div class="video">
 						<div class="video-wrapper">
-							<iframe width="560" height="315"
-								src="https://www.youtube.com/embed/hyetTJz-0AY" frameborder="0"
+							<iframe width="560" height="315" id="videoAddr"
+								src="" frameborder="0"
 								allowfullscreen></iframe>
 						</div>
 						<p class="caption">In luctus nunc nec lacus condimentum

@@ -46,4 +46,9 @@ public class HomeController {
 	public String getElementsPage() throws Exception{
 		return "elements";
 	}
+	
+	@RequestMapping("/view")
+	public String getViewPage() throws Exception{
+		return "view";
+	}
 }

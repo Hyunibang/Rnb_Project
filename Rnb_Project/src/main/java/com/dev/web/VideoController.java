@@ -1,5 +1,7 @@
 package com.dev.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -20,22 +22,16 @@ public class VideoController {
 	@Resource(name = "GradeDao")
 	private GradeDao grade;
 	
-	@RequestMapping(value="suggest.do")
-	public Object suggestProcess() {
-		System.out.println("suggest ¸Þ¼Òµå");
-		System.out.println(video.suggestContent());
-	
-		/*return "home";*/
-		return null;
-	}
-	
-	/*@RequestMapping(value="main.do")
-	public ModelAndView showMain() {
+	@RequestMapping(value = "main.do")
+	public ModelAndView mainStart() {
 		ModelAndView modelAndView = new ModelAndView();
-		System.out.println("showMain");
-		
-		modelAndView.setViewName("jsp/home");
-		
+		/*List<VideoBean> gmain1 = video.suggestGrade1();
+		List<VideoBean> gmain2 = video.suggestGrade2();
+				
+		modelAndView.addObject("gmain1", gmain1);
+		modelAndView.addObject("gmain2", gmain2);*/
+		modelAndView.setViewName("home");
+	
 		return modelAndView;
-	}*/
+	}
 }
