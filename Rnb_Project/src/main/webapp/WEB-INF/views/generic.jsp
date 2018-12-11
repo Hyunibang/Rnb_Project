@@ -7,7 +7,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-<head>
+<head> 
 <title>Generic - Broadcast by TEMPLATED</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8" />
@@ -68,7 +68,12 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="amsoo" href="view" class="link"><span>Click Me</span></a>
+										<!--
+										<form>
+											<input name="https://www.youtube.com/embed/1VIVAMUl-fY"><br>
+										</form>
+										 -->
+										<a id="amsoo" href="#" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -77,7 +82,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="singleman" href="view" class="link"><span>Click Me</span></a>
+										<a id="singleman" href="#" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -86,7 +91,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="chang" href="view" class="link"><span>Click Me</span></a>
+										<a id="chang" href="#" class="link"><span>Click Me</span></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -99,7 +104,7 @@
 										<p class="caption">Nam eu nisi non ante sodales interdum a
 											vitae neque</p>
 											 -->
-										<a id="twofriends" href="view" class="link"><span>Click Me</span></a>
+										<a id="twofriends" href="#" class="link"><span>Click Me</span></a>
 									</div>
 
 								</div>
@@ -185,7 +190,9 @@
 					var click_id = $(this).attr('id');
 					var videoAddr;
 					if(click_id == "venom"){
+						videoAddr = "https://www.youtube.com/embed/1VIVAMUl-fY";
 						location.href = 'view';
+						//location.href = "view.jsp?videoAddr=" + $("#videoAddr").val();
 					}
 					else if(click_id == "amsoo"){
 						alert('amsoo');
