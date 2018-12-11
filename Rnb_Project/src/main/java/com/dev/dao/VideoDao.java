@@ -8,7 +8,11 @@ import com.dev.bean.VideoBean;
 
 public class VideoDao extends SqlSessionDaoSupport{
 	
-	public List<VideoBean> suggestContent(){
-		return this.getSqlSession().selectList("suggestContent");
+	public List<VideoBean> suggestGrade1(){
+		return this.getSqlSession().selectList("suggestGrade1");
+	}
+	
+	public List<VideoBean> suggestGrade2(){
+		return this.getSqlSession().selectList("suggestGrade2");
 	}
 }

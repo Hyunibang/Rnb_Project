@@ -1,27 +1,24 @@
-<!DOCTYPE HTML>
-<!--
-	Broadcast by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Broadcast by TEMPLATED</title>
-<meta charset="utf-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" href="assets/css/main.css" />
 
-<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/suggest.js" type="text/javascript"></script>
+
+<title>Insert title here</title>
 </head>
 <body>
-	<form name="suggest" action="/dev/suggest.do"></form>
 	<form action="home">
 		<!-- Header -->
 		<header id="header">
@@ -67,34 +64,36 @@
 			<section class="wrapper style1">
 				<div class="inner">
 					<header class="align-center">
-						<h2>Nam eu nisi non ante sodale</h2>
-						<p>Cras sagittis turpis sit amet est tempus, sit amet
-							consectetur purus tincidunt.</p>
+						<h2>이번달 영화 추천</h2>
+						<p>평점순</p>
 					</header>
 					<!-- 2 Column Video Section -->
 					<div class="flex flex-2">
-						<div class="video col">
-							<div class="image fit">
-								<img src="images/pic07.jpg" alt="" />
-								<div class="arrow">
-									<div class="icon fa-play"></div>
+						<c:forEach items="${gmain1 }" var="gm1">
+							<div class="video col">
+								<div class="image fit">
+									<img src="movieImage/${gm1.image_number }" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
 								</div>
+								<p class="caption">${gm1.title }</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
-							<p class="caption">Pellentesque at nunc vitae urna suscipit
-								mollis nec in arcu</p>
-							<a href="generic" class="link"><span>Click Me</span></a>
-						</div>
-						<div class="video col">
-							<div class="image fit">
-								<img src="images/pic08.jpg" alt="" />
-								<div class="arrow">
-									<div class="icon fa-play"></div>
+						</c:forEach>
+
+						<c:forEach items="${gmain2 }" var="gm2">
+							<div class="video col">
+								<div class="image fit">
+									<img src="movieImage/${gm2.image_number }" alt="" />
+									<div class="arrow">
+										<div class="icon fa-play"></div>
+									</div>
 								</div>
+								<p class="caption">${gm2.title }</p>
+								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
-							<p class="caption">Morbi mattis ligula ut eros ipsum aliquam
-								iaculis dictum suscipit</p>
-							<a href="generic" class="link"><span>Click Me</span></a>
-						</div>
+						</c:forEach>
 					</div>
 				</div>
 			</section>
