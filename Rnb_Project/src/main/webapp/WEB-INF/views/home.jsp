@@ -69,23 +69,23 @@
 					</header>
 					<!-- 2 Column Video Section -->
 					<div class="flex flex-2">
-						<c:forEach items="${gmain1 }" var="gm1">
+						<c:forEach items="${gmain1}" var="gm1">
 							<div class="video col">
 								<div class="image fit">
-									<img src="movieImage/${gm1.image_number }" alt="" style="width: 670px; height: 600px;"/>
+									<img src="movieImage/${gm1.image_number}" alt="" style="width: 670px; height: 600px;"/>
 									<div class="arrow">
 										<div class="icon fa-play"></div>
 									</div>
 								</div>
-								<p class="caption">${gm1.title }</p>
+								<p class="caption">${gm1.title}</p>
 								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
 						</c:forEach>
 
-						<c:forEach items="${gmain2 }" var="gm2">
+						<%-- <c:forEach items="${gmain2}" var="gm2">
 							<div class="video col">
 								<div class="image fit">
-									<img src="movieImage/${gm2.image_number }" alt="" style="width: 670px; height: 600px;"/>
+									<img src="movieImage/${gm2.image_number}" alt="" style="width: 670px; height: 600px;"/>
 									<div class="arrow">
 										<div class="icon fa-play"></div>
 									</div>
@@ -93,7 +93,7 @@
 								<p class="caption">${gm2.title }</p>
 								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
-						</c:forEach>
+						</c:forEach> --%>
 					</div>
 				</div>
 			</section>
@@ -326,18 +326,19 @@
 
 					<!-- 3 Column Video Section -->
 					<div class="flex flex-3">
+					<c:forEach var="i" items="${gcount}"> 
 						<div class="video col">
 							<div class="image fit">
-								<img src="images/pic09.jpg" alt="" />
+								<img src="movieImage/${i.image_number}" alt="" />
 								<div class="arrow">
 									<div class="icon fa-play"></div>
 								</div>
 							</div>
-							<p class="caption">Cras eget lacus sed mauris scelerisque
-								tincidunt</p>
+							<p class="caption">${i.title}</p>
 							<a href="generic" class="link"><span>Click Me</span></a>
 						</div>
-						<div class="video col">
+					</c:forEach>
+						<!-- <div class="video col">
 							<div class="image fit">
 								<img src="images/pic10.jpg" alt="" />
 								<div class="arrow">
@@ -358,7 +359,7 @@
 							<p class="caption">Nam eu nisi non ante sodales interdum a
 								vitae neque</p>
 							<a href="generic" class="link"><span>Click Me</span></a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</section>

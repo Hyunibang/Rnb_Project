@@ -14,11 +14,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="suggestGrade1" resultType="video">
 		<include refid="grade" />
-		WHERE ranking = 1
+		WHERE ranking between 1 and 2
 	</select>
 	
-	<select id="suggestGrade2" resultType="video">
+<!-- 	<select id="suggestGrade2" resultType="video">
 		<include refid="grade" />
 		WHERE ranking = 2
+	</select> -->
+	
+	<select id="suggestCount1" resultType="video">
+	select title, image_number
+	from video
+	where genre =(
+	select genre
+	from(
+	select rank() over(order by counting desc) ranking, genre
+	from(
+	select count(*) as counting, v.genre as genre from customer c, video v where c.id = 'apple' and v.id = 'apple' group by v.genre order by counting desc))
+	where ranking = 1) and id = 'apple' AND ROWNUM <![CDATA[<]]> 4
 	</select>
+	
+	
 </mapper>

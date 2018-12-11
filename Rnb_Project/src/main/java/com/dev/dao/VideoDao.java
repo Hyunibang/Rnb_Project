@@ -12,7 +12,12 @@ public class VideoDao extends SqlSessionDaoSupport{
 		return this.getSqlSession().selectList("suggestGrade1");
 	}
 	
-	public List<VideoBean> suggestGrade2(){
+	/*public List<VideoBean> suggestGrade2(){
 		return this.getSqlSession().selectList("suggestGrade2");
+	}*/
+	
+	public List<VideoBean> suggestCount1(){
+		return this.getSqlSession().selectList("suggestCount1");
 	}
+	
 }
