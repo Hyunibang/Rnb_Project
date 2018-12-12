@@ -46,7 +46,6 @@
 						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
 							영화 보기></a>
 					</header>
-
 					<!-- 4 Column Video Section -->
 					<div class="flex flex-4">
 						<div class="container">
@@ -55,7 +54,7 @@
 									<div class="video col">
 										<div class="image fit">
 											<input id="id" type="hidden" value="venom"> <img
-												src="images/movie_venom.png" alt="" />
+												id="asd" src="images/movie_venom.png" alt="" />
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
@@ -67,7 +66,7 @@
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/movie_amsoo.png" alt="" /> <input id="id"
+											<img src="images/movie_amsoo.png" alt="" /> <input
 												type="hidden" value="amsoo">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
@@ -117,7 +116,7 @@
 				</div>
 			</section>
 
-			<section class="wrapper ">
+			<section class="wrapper">
 				<div class="inner">
 					<header class="align-left">
 						<h2>인기 영화</h2>
@@ -129,7 +128,7 @@
 					<div class="flex flex-4">
 						<div class="container">
 							<div class="bxslider4_wrap">
-								<div id="bxslider2" class="bxslider4">
+								<div id="bxsliderAnimation" class="bxslider4">
 									<div class="video col">
 										<div class="image fit">
 											<input id="id" type="hidden" value="venom"> <img
@@ -138,9 +137,6 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<!-- 
-										<a id="venom" href="generi.do?vemon=venom" class="link"><span>Click Me</span></a>
-										 -->
 										<a id="venom" href="#" class="link"></a>
 									</div>
 									<div class="video col">
@@ -151,7 +147,7 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="amsoo" href="#" class="link"></a>
+										<a id="imgId" name="test" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -191,7 +187,7 @@
 							</div>
 						</div>
 					</div>
-					<input id="movieId" name="movieId" type="hidden">
+					<input id="animationId" name="animationId" type="hidden">
 				</div>
 			</section>
 
@@ -216,7 +212,7 @@
 			});
 		</script>
 		<script>
-			$('#bxslider2').bxSlider({
+			$('#bxsliderAnimation').bxSlider({
 				auto : true,
 				pager : false,
 				slideWidth : 400,
@@ -228,8 +224,9 @@
 		</script>
 		<script>
 			$(document).ready(function() {
-				$("a").click(function() {
+				$('.link').on('click', function() {
 					var click_id = $(this).attr('id');
+					alert(click_id);
 					$('#movieId').val(click_id);
 					$("form[name='generic']").submit();
 				});
