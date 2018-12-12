@@ -30,7 +30,7 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a href="home">Home</a></li>
+				<li><a href="main.do">Home</a></li>
 				<li><a href="generic">Genre</a></li>
 					<ul>
 						<li><a onclick="fnMove('1')" href="#">Movie</a></li>
