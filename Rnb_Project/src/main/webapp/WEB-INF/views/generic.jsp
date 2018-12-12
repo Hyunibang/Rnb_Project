@@ -31,8 +31,12 @@
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="home">Home</a></li>
-				<li><a href="generic">Generic</a></li>
-				<li><a href="elements">Elements</a></li>
+				<li><a href="generic">Genre</a></li>
+					<ul>
+						<li><a onclick="fnMove('1')" href="#">Movie</a></li>
+						<li><a onclick="fnMove('2')" href="#">Animation</a></li>
+					</ul>
+				<li><a href="elements">Other</a></li>
 			</ul>
 		</nav>
 
@@ -40,7 +44,7 @@
 		<div id="main">
 			<!-- Movie -->
 			<section class="wrapper ">
-				<div class="inner">
+				<div id="div1" class="inner">
 					<header class="align-left">
 						<h2>인기 영화</h2>
 						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
@@ -117,7 +121,7 @@
 			</section>
 
 			<section class="wrapper">
-				<div class="inner">
+				<div id="div2" class="inner">
 					<header class="align-left">
 						<h2>인기 영화</h2>
 						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
@@ -226,7 +230,6 @@
 			$(document).ready(function() {
 				$('.link').on('click', function() {
 					var click_id = $(this).attr('id');
-					alert(click_id);
 					$('#movieId').val(click_id);
 					$("form[name='generic']").submit();
 				});
@@ -234,4 +237,14 @@
 		</script>
 	</form>
 </body>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	function fnMove(seq) {
+		var offset = $("#div" + seq).offset();
+		$('html, body').animate({
+			scrollTop : offset.top
+		}, 400);
+	}
+</script>
 </html>
