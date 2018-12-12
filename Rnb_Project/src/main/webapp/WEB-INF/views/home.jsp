@@ -395,7 +395,7 @@
 							<li><a href="#">Massa amet lobortis vel.</a></li>
 							<li><a href="#">Nascetur nunc varius commodo.</a></li>
 						</ul>
-					</div>
+					</div>	
 				</div>
 			</div>
 			<div class="copyright">

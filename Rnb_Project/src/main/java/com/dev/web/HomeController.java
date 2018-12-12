@@ -51,4 +51,9 @@ public class HomeController {
 	public String getViewPage() throws Exception{
 		return "view";
 	}
+	
+	@RequestMapping("/wholePopularMovieList")
+	public String getwholePopularMovieListPage() throws Exception{
+		return "wholePopularMovieList";
+	}
 }

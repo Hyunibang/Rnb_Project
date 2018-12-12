@@ -7,7 +7,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-<head> 
+<head>
 <title>Generic - Broadcast by TEMPLATED</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8" />
@@ -18,7 +18,7 @@
 	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 </head>
 <body class="subpage">
-	<form action="generic">
+	<form name="generic" action="/dev/generic.do" method="post">
 		<!-- Header -->
 		<header id="header">
 			<h1>
@@ -38,64 +38,67 @@
 
 		<!-- Main -->
 		<div id="main">
-
-			<!-- Three -->
+			<!-- Movie -->
 			<section class="wrapper ">
 				<div class="inner">
 					<header class="align-left">
 						<h2>인기 영화</h2>
-						<p>전체보기></p>
+						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
+							영화 보기></a>
 					</header>
 
 					<!-- 4 Column Video Section -->
 					<div class="flex flex-4">
 						<div class="container">
 							<div class="bxslider4_wrap">
-								<div id="bxslider" class="bxslider4">
+								<div id="bxsliderMovie" class="bxslider4">
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/venom.jpg" alt="" />
+											<input id="id" type="hidden" value="venom"> <img
+												src="images/movie_venom.png" alt="" />
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="venom" href="#" class="link"><span>Click Me</span></a>
-									</div>
-									<div class="video col">
-										<div class="image fit">
-											<img src="images/amsoo.jpg" alt="" />
-											<div class="arrow">
-												<div class="icon fa-play"></div>
-											</div>
-										</div>
-										<!--
-										<form>
-											<input name="https://www.youtube.com/embed/1VIVAMUl-fY"><br>
-										</form>
+										<!-- 
+										<a id="venom" href="generi.do?vemon=venom" class="link"><span>Click Me</span></a>
 										 -->
-										<a id="amsoo" href="#" class="link"><span>Click Me</span></a>
+										<a id="venom" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/singleman.jpg" alt="" />
+											<img src="images/movie_amsoo.png" alt="" /> <input id="id"
+												type="hidden" value="amsoo">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="singleman" href="#" class="link"><span>Click Me</span></a>
+										<a id="amsoo" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/chang.jpg" alt="" />
+											<img src="images/movie_singleman.png" alt="" /> <input
+												id="id" type="hidden" value="singleman">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="chang" href="#" class="link"><span>Click Me</span></a>
+										<a id="singleman" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/twofriends.jpg" alt="" />
+											<img src="images/movie_chang.png" alt="" /> <input id="id"
+												type="hidden" value="chang">
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<a id="chang" href="#" class="link"></a>
+									</div>
+									<div class="video col">
+										<div class="image fit">
+											<img src="images/movie_twofriends.png" alt="" /> <input
+												id="id" type="hidden" value="twofriends">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
@@ -104,67 +107,95 @@
 										<p class="caption">Nam eu nisi non ante sodales interdum a
 											vitae neque</p>
 											 -->
-										<a id="twofriends" href="#" class="link"><span>Click Me</span></a>
+										<a id="twofriends" href="#" class="link"></a>
 									</div>
-
 								</div>
 							</div>
 						</div>
 					</div>
+					<input id="movieId" name="movieId" type="hidden">
+				</div>
+			</section>
+
+			<section class="wrapper ">
+				<div class="inner">
+					<header class="align-left">
+						<h2>인기 영화</h2>
+						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
+							영화 보기></a>
+					</header>
+
+					<!-- 4 Column Video Section -->
+					<div class="flex flex-4">
+						<div class="container">
+							<div class="bxslider4_wrap">
+								<div id="bxslider2" class="bxslider4">
+									<div class="video col">
+										<div class="image fit">
+											<input id="id" type="hidden" value="venom"> <img
+												src="images/movie_venom.png" alt="" />
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<!-- 
+										<a id="venom" href="generi.do?vemon=venom" class="link"><span>Click Me</span></a>
+										 -->
+										<a id="venom" href="#" class="link"></a>
+									</div>
+									<div class="video col">
+										<div class="image fit">
+											<img src="images/movie_amsoo.png" alt="" /> <input id="id"
+												type="hidden" value="amsoo">
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<a id="amsoo" href="#" class="link"></a>
+									</div>
+									<div class="video col">
+										<div class="image fit">
+											<img src="images/movie_singleman.png" alt="" /> <input
+												id="id" type="hidden" value="singleman">
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<a id="singleman" href="#" class="link"></a>
+									</div>
+									<div class="video col">
+										<div class="image fit">
+											<img src="images/movie_chang.png" alt="" /> <input id="id"
+												type="hidden" value="chang">
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<a id="chang" href="#" class="link"></a>
+									</div>
+									<div class="video col">
+										<div class="image fit">
+											<img src="images/movie_twofriends.png" alt="" /> <input
+												id="id" type="hidden" value="twofriends">
+											<div class="arrow">
+												<div class="icon fa-play"></div>
+											</div>
+										</div>
+										<!--
+										<p class="caption">Nam eu nisi non ante sodales interdum a
+											vitae neque</p>
+											 -->
+										<a id="twofriends" href="#" class="link"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<input id="movieId" name="movieId" type="hidden">
 				</div>
 			</section>
 
 		</div>
-
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<div class="flex flex-3">
-					<div class="col">
-						<h3>Vestibullum</h3>
-						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						</ul>
-					</div>
-					<div class="col">
-						<h3>Lobortis</h3>
-						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						</ul>
-					</div>
-					<div class="col">
-						<h3>Accumsan</h3>
-						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="copyright">
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span
-							class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span
-							class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span
-							class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-snapchat"><span
-							class="label">Snapchat</span></a></li>
-				</ul>
-				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
-				Images: <a href="https://unsplash.com">Coverr</a>. Video: <a
-					href="https://coverr.co">Coverr</a>.
-			</div>
-		</footer>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
@@ -174,7 +205,18 @@
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
 		<script>
-			$('#bxslider').bxSlider({
+			$('#bxsliderMovie').bxSlider({
+				auto : true,
+				pager : false,
+				slideWidth : 400,
+				minSlides : 1,
+				maxSlides : 4,
+				slideMargin : 0,
+				moveSlides : 1,
+			});
+		</script>
+		<script>
+			$('#bxslider2').bxSlider({
 				auto : true,
 				pager : false,
 				slideWidth : 400,
@@ -186,17 +228,10 @@
 		</script>
 		<script>
 			$(document).ready(function() {
-				$("a").click(function(event) {
+				$("a").click(function() {
 					var click_id = $(this).attr('id');
-					var videoAddr;
-					if(click_id == "venom"){
-						videoAddr = "https://www.youtube.com/embed/1VIVAMUl-fY";
-						location.href = 'view';
-						//location.href = "view.jsp?videoAddr=" + $("#videoAddr").val();
-					}
-					else if(click_id == "amsoo"){
-						alert('amsoo');
-					}
+					$('#movieId').val(click_id);
+					$("form[name='generic']").submit();
 				});
 			});
 		</script>

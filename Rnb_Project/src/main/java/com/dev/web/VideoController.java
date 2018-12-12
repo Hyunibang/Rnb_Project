@@ -1,17 +1,16 @@
 package com.dev.web;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.dev.bean.VideoBean;
 import com.dev.dao.GradeDao;
 import com.dev.dao.VideoDao;
-import com.fasterxml.jackson.annotation.JsonFormat.Value;
 
 @Controller
 public class VideoController {
@@ -33,5 +32,16 @@ public class VideoController {
 		modelAndView.setViewName("home");
 	
 		return modelAndView;
+	}
+	
+	@RequestMapping(value="generic.do", method=RequestMethod.POST)
+	public String selectMovie(@RequestParam(value="movieId", required=false)String movieId, Model model) {
+
+		if(movieId.equals("venom"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/a_8Piw93wQE");
+		else if(movieId.equals("amsoo"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/1VIVAMUl-fY");
+		
+		return "view";
 	}
 }
