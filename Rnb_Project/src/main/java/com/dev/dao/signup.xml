@@ -19,10 +19,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id = #{id}
 	</select>
 	
-	<!-- <select id="findName" parameterType="HashMap" resultType="String">
+	 <select id="findName" parameterType="HashMap" resultType="String">
 		SELECT name
 		FROM customer
-		WHERE id=#{signin_id} AND password=#{signin_pw}
-	</select> -->
+		WHERE id=#{id} AND password=#{password}
+	</select>
 
 </mapper>

@@ -46,7 +46,7 @@
 		<section id="banner" data-video="images/banner">
 			<div class="inner">
 				<header>
-					<h1>This is Broadcast</h1>
+					<h1>${username}님 환영합니다.</h1>
 					<p>
 						Morbi eu purus eget urna interdum dignissim sed consectetur augue<br />
 						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.

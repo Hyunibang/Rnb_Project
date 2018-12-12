@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,14 +40,13 @@ public class SignupController {
 	
 	//로그인
 	@RequestMapping(value="login_form.do", method = RequestMethod.POST)
-	public String login(@RequestParam(value="id", required=false)String id, @RequestParam(value="password", required=false)String password) throws Exception {
+	public String login(HttpSession session, @RequestParam(value="id", required=false)String id, @RequestParam(value="password", required=false)String password) throws Exception {
 		if(password.equals(signup.login(id))) {
 			HashedMap<String, Object>map = new HashedMap<String, Object>();
 			map.put("id", id);
 			map.put("password", password);
-//			System.out.println(sign_id + sign_pw);
-//			String name = signup.findName(map);
-//			System.out.println(name);
+			
+			session.setAttribute("username", signup.findName(map));
 			
 			return "redirect:main.do";
 		}
