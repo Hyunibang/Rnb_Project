@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.dev.bean.CustomerBean">
+
+	<insert id="signup" parameterType="customer">
+		insert into Customer(id, employ_id, password, name, phonenumber, age, animation_count, movie_count)
+		values (#{signup_id}, seq_number.NEXTVAL, #{signup_pw}, #{signup_name}, #{signup_phone}, #{signup_age}, #{animation_count}, #{movie_count})
+	</insert>
+	
+	<select id="getList" resultType="customer">
+		select * from Customer
+	</select>
+	
+	<!-- 
+	<select id="checkId" parameterType="customer" resultType="customer">
+		select COUNT(id) from Customer
+		where id = #{signup_id}
+	</select>
+	-->
+	<select id="signin" parameterType="String" resultType="String">
+		select password 
+		from Customer
+		where id = #{signin_id}
+	</select>
+	
+
+</mapper>

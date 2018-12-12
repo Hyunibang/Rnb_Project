@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <!--
 	Broadcast by TEMPLATED
@@ -26,7 +28,7 @@
 		<!-- Header -->
 		<header id="header">
 			<h1>
-				<a href="#">Broadcast <span>by TEMPLATED</span></a>
+				<a href="#">Broadcast한글 <span>by TEMPLATED</span></a>
 			</h1>
 			<a href="#menu">Menu</a>
 		</header>
