@@ -132,7 +132,7 @@
 					<form name="sign_form" id="sign_form" class="form-horizontal"
 						role="form" action="" method="post">
 						<input type="hidden" name="sign_formaction" value="signup">
-						
+						<input type="hidden" name="gender" value="Test"> 
 						<input type="hidden" name="animation_count" value="0"> <input
 							type="hidden" name="movie_count" value="0">
 						<div id="signupalert" style="display: none"

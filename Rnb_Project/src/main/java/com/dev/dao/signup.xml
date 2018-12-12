@@ -5,25 +5,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper	namespace="com.dev.bean.CustomerBean">
 
 	<insert id="signup" parameterType="customer">
-		insert into Customer(id, employ_id, password, name, phonenumber, age, animation_count, movie_count)
-		values (#{signup_id}, seq_number.NEXTVAL, #{signup_pw}, #{signup_name}, #{signup_phone}, #{signup_age}, #{animation_count}, #{movie_count})
+		insert into customer(id, password, name, phonenumber, age, gender, animation_count, movie_count)
+		values (#{signup_id}, #{signup_pw}, #{signup_name}, #{signup_phone}, #{signup_age}, #{gender}, #{animation_count}, #{movie_count})
 	</insert>
 	
 	<select id="getList" resultType="customer">
-		select * from Customer
+		select * from customer
 	</select>
 	
-	<!-- 
-	<select id="checkId" parameterType="customer" resultType="customer">
-		select COUNT(id) from Customer
-		where id = #{signup_id}
-	</select>
-	-->
 	<select id="signin" parameterType="String" resultType="String">
-		select password 
-		from Customer
+		select password
+		from customer
 		where id = #{signin_id}
 	</select>
 	
+	<select id="findName" parameterType="HashMap" resultType="String">
+		SELECT name
+		FROM customer
+		WHERE id=#{signin_id} AND password=#{signin_pw}
+	</select>
 
 </mapper>
