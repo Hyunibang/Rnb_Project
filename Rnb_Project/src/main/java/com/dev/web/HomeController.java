@@ -46,4 +46,14 @@ public class HomeController {
 	public String getElementsPage() throws Exception{
 		return "elements";
 	}
+	
+	@RequestMapping("/index")
+	public String getHomePage() throws Exception{
+		return "index";
+	}
+	
+	@RequestMapping("/login")
+	public String getLoginPage() throws Exception{
+		return "login";
+	}
 }
