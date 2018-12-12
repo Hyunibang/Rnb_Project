@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <!--
 	Broadcast by TEMPLATED
@@ -24,6 +26,7 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
+				<li><a>${reqName}님</a></li>
 				<li><a href="home">Home</a></li>
 				<li><a href="generic">Generic</a></li>
 				<li><a href="elements">Elements</a></li>

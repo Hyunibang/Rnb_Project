@@ -14,19 +14,19 @@
 	<!-- Header -->
 	<header id="header">
 		<h1>
-			<a href="index">알앤비소프트<span>aabbcc</span></a>
+			<a href="index">RnB Soft</a>
 		</h1>
 	</header>
 
 	<section id="banner" data-video="images/banner">
 		<div class="inner">
 			<header>
-				<h1>ㅁㅁㅁ</h1>
+				<h1>클릭 한 번에 해지 완료</h1>
 				<p>
-					Watch TV Shows Online, Watch Movies Online<br /> ㄴㄴㅇㅇㄹㄹ
+					가입은 지금 즉시, 해지는 원할 때, 고객이 최고!<br />
 				</p>
 			</header>
-			<a href="login" class="button big alt scrolly">Login</a>
+			<a href="login" class="button big alt scrolly">부담 없이 이용하기</a>
 		</div>
 
 

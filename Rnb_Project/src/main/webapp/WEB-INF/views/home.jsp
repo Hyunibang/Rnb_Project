@@ -31,6 +31,7 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
+				<li><a>${reqName}님</a></li>
 				<li><a href="home">Home</a></li>
 				<li><a href="generic">Generic</a></li>
 				<li><a href="elements">Elements</a></li>
@@ -48,7 +49,7 @@
 				<header>
 					<h1>This is Broadcast</h1>
 					<p>
-						Morbi eu purus eget urna interdum dignissim sed consectetur augue<br />
+						${reqName}님 환영합니다.<br />
 						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
 					</p>
 				</header>

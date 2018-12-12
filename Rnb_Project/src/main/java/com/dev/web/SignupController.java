@@ -1,6 +1,5 @@
 package com.dev.web;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,18 +37,18 @@ public class SignupController {
 	
 	//로그인
 	@RequestMapping(value="login_form.do", method = RequestMethod.POST)
-	public String login(@RequestParam(value="id", required=false)String id, @RequestParam(value="password", required=false)String password) throws Exception {
+	public String login(HttpSession session, @RequestParam(value="id", required=false)String id, @RequestParam(value="password", required=false)String password) throws Exception {
 		if(password.equals(signup.login(id))) {
 			HashedMap<String, Object>map = new HashedMap<String, Object>();
 			map.put("id", id);
 			map.put("password", password);
-//			System.out.println(sign_id + sign_pw);
-//			String name = signup.findName(map);
-//			System.out.println(name);
+			String name = signup.findName(map);
+			session.setAttribute("reqName", name);
 			
 			return "redirect:main.do";
 		}
 		
 		return "login";
 	}
+	
 }
