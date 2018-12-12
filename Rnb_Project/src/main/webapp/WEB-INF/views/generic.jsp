@@ -116,16 +116,16 @@
 							</div>
 						</div>
 					</div>
-					<input id="movieId" name="movieId" type="hidden">
+					<input id="videoId" name="videoId" type="hidden">
 				</div>
 			</section>
 
 			<section class="wrapper">
 				<div id="div2" class="inner">
 					<header class="align-left">
-						<h2>인기 영화</h2>
+						<h2>인기 애니메이션</h2>
 						<a id="popularMovieId" href="wholePopularMovieList" class="link">전체
-							영화 보기></a>
+							애니메이션 보기></a>
 					</header>
 
 					<!-- 4 Column Video Section -->
@@ -136,7 +136,7 @@
 									<div class="video col">
 										<div class="image fit">
 											<input id="id" type="hidden" value="venom"> <img
-												src="images/movie_venom.png" alt="" />
+												src="animationImage/ani_bossbaby.jpg" alt="" />
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
@@ -145,7 +145,7 @@
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/movie_amsoo.png" alt="" /> <input id="id"
+											<img src="animationImage/ani_mosterhotel.jpg" alt="" /> <input id="id"
 												type="hidden" value="amsoo">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
@@ -155,7 +155,7 @@
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/movie_singleman.png" alt="" /> <input
+											<img src="animationImage/ani_incre.jpg" alt="" /> <input
 												id="id" type="hidden" value="singleman">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
@@ -165,7 +165,7 @@
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/movie_chang.png" alt="" /> <input id="id"
+											<img src="animationImage/ani_run.jpg" alt="" /> <input id="id"
 												type="hidden" value="chang">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
@@ -175,7 +175,7 @@
 									</div>
 									<div class="video col">
 										<div class="image fit">
-											<img src="images/movie_twofriends.png" alt="" /> <input
+											<img src="animationImage/ani_rapunzel.jpg" alt="" /> <input
 												id="id" type="hidden" value="twofriends">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
@@ -191,7 +191,7 @@
 							</div>
 						</div>
 					</div>
-					<input id="animationId" name="animationId" type="hidden">
+					<input id="videoId" name="videoId" type="hidden">
 				</div>
 			</section>
 
@@ -230,7 +230,7 @@
 			$(document).ready(function() {
 				$('.link').on('click', function() {
 					var click_id = $(this).attr('id');
-					$('#movieId').val(click_id);
+					$('#videoId').val(click_id);
 					$("form[name='generic']").submit();
 				});
 			});
