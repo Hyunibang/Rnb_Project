@@ -1,5 +1,7 @@
 package com.dev.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dev.bean.VideoBean;
 import com.dev.dao.GradeDao;
 import com.dev.dao.VideoDao;
 
