@@ -40,12 +40,29 @@ public class VideoController {
 	}
 	
 	@RequestMapping(value="generic.do", method=RequestMethod.POST)
-	public String selectMovie(@RequestParam(value="movieId", required=false)String movieId, Model model) {
-
-		if(movieId.equals("venom"))
-			model.addAttribute("videoAddr", "https://www.youtube.com/embed/a_8Piw93wQE");
-		else if(movieId.equals("amsoo"))
-			model.addAttribute("videoAddr", "https://www.youtube.com/embed/1VIVAMUl-fY");
+	public String selectVideo(@RequestParam(value="videoId", required=false)String videoId, Model model) {
+		
+		if(videoId.equals("venom,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/SgxAx7E-jjE");
+		else if(videoId.equals("amsoo,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/dfnKOAmaQM8");
+		else if(videoId.equals("singleman,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/AGLrSZuMnqw");
+		else if(videoId.equals("chang,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/qHmQE93hVmA");
+		else if(videoId.equals("twofriends,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/D_V9AfiZrTU");
+		
+		else if(videoId.equals("mosterhotel,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/s64962hfW94");
+		else if(videoId.equals("rapunzel,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/79ZV71e0efk");
+		else if(videoId.equals("runs,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/ZJLyEN9hdMg");
+		else if(videoId.equals("incre,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/zON6Mu9_PC0");
+		else if(videoId.equals("bossbaby,"))
+			model.addAttribute("videoAddr", "https://www.youtube.com/embed/dQbpxuxMPic");
 		
 		return "view";
 	}

@@ -66,7 +66,7 @@
 										<!-- 
 										<a id="venom" href="generi.do?vemon=venom" class="link"><span>Click Me</span></a>
 										 -->
-										<a id="venom" href="#" class="link"></a>
+										<a id="venom" name="asd" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
@@ -141,51 +141,47 @@
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="venom" href="#" class="link"></a>
+										<a id="bossbaby" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
 											<img src="animationImage/ani_mosterhotel.jpg" alt="" /> <input id="id"
-												type="hidden" value="amsoo">
+												type="hidden" value="mosterhotel">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="imgId" name="test" href="#" class="link"></a>
+										<a id="mosterhotel" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
 											<img src="animationImage/ani_incre.jpg" alt="" /> <input
-												id="id" type="hidden" value="singleman">
+												id="id" type="hidden" value="incre">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="singleman" href="#" class="link"></a>
+										<a id="incre" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
 											<img src="animationImage/ani_run.jpg" alt="" /> <input id="id"
-												type="hidden" value="chang">
+												type="hidden" value="run">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<a id="chang" href="#" class="link"></a>
+										<a id="run" href="#" class="link"></a>
 									</div>
 									<div class="video col">
 										<div class="image fit">
 											<img src="animationImage/ani_rapunzel.jpg" alt="" /> <input
-												id="id" type="hidden" value="twofriends">
+												id="id" type="hidden" value="rapunzel">
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
 										</div>
-										<!--
-										<p class="caption">Nam eu nisi non ante sodales interdum a
-											vitae neque</p>
-											 -->
-										<a id="twofriends" href="#" class="link"></a>
+										<a id="rapunzel" href="#" class="link"></a>
 									</div>
 								</div>
 							</div>
@@ -230,6 +226,7 @@
 			$(document).ready(function() {
 				$('.link').on('click', function() {
 					var click_id = $(this).attr('id');
+					alert(click_id);
 					$('#videoId').val(click_id);
 					$("form[name='generic']").submit();
 				});
