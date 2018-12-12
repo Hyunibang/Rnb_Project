@@ -31,9 +31,9 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a href="home">Home</a></li>
-				<li><a href="generic">Generic</a></li>
-				<li><a href="elements">Elements</a></li>
+				<li><a href="main.do">Home</a></li>
+				<li><a href="generic">Genre</a></li>
+				<li><a href="elements">Other</a></li>
 			</ul>
 		</nav>
 
@@ -46,13 +46,16 @@
 		<section id="banner" data-video="images/banner">
 			<div class="inner">
 				<header>
-					<h1>This is Broadcast</h1>
+					<h1>${username}님 환영합니다.</h1>
 					<p>
 						Morbi eu purus eget urna interdum dignissim sed consectetur augue<br />
 						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
 					</p>
 				</header>
-				<a href="#main" class="button big alt scrolly">Dignissim</a>
+				<!-- div1로 이동 -->
+				<input type="button" onclick="fnMove('1')" value="이번달 영화 추천" />
+				<!-- div2로 이동 -->
+				<input type="button" onclick="fnMove('2')" value="나에게 맞는 영상" />
 			</div>
 
 		</section>
@@ -62,262 +65,33 @@
 
 			<!-- One -->
 			<section class="wrapper style1">
-				<div class="inner">
+				<div id="div1" class="inner">
 					<header class="align-center">
 						<h2>이번달 영화 추천</h2>
 						<p>평점순</p>
 					</header>
 					<!-- 2 Column Video Section -->
 					<div class="flex flex-2">
-						<c:forEach items="${gmain1 }" var="gm1">
+						<c:forEach items="${gmain1}" var="gm1">
 							<div class="video col">
 								<div class="image fit">
-									<img src="movieImage/${gm1.image_number }" alt="" />
+									<img src="movieImage/${gm1.image_number}" alt="" style="width: 670px; height: 600px;"/>
 									<div class="arrow">
 										<div class="icon fa-play"></div>
 									</div>
 								</div>
-								<p class="caption">${gm1.title }</p>
+								<p class="caption">${gm1.title}</p>
 								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
 						</c:forEach>
 
-						<c:forEach items="${gmain2 }" var="gm2">
-							<div class="video col">
-								<div class="image fit">
-									<img src="movieImage/${gm2.image_number }" alt="" />
-									<div class="arrow">
-										<div class="icon fa-play"></div>
-									</div>
-								</div>
-								<p class="caption">${gm2.title }</p>
-								<a href="generic" class="link"><span>Click Me</span></a>
-							</div>
-						</c:forEach>
-					</div>
-				</div>
-			</section>
-
-			<!-- Two -->
-			<section class="wrapper style2">
-				<div class="inner">
-					<header>
-						<h2>Etiam veroeros lorem</h2>
-						<p>Fusce fringilla enim sit amet lectus sollicitudin, eu
-							tincidunt odio semper.</p>
-					</header>
-					<!-- Tabbed Video Section -->
-					<div class="flex flex-tabs">
-						<ul class="tab-list">
-							<li><a href="#" data-tab="tab-1" class="active">Duis
-									vestibulum tellus</a></li>
-							<li><a href="#" data-tab="tab-2">Quam tempus sodales
-									ipsum</a></li>
-							<li><a href="#" data-tab="tab-3">Donec faucibus risus
-									cursus</a></li>
-						</ul>
-						<div class="tabs">
-
-							<!-- Tab 1 -->
-							<div class="tab tab-1 flex flex-3 active">
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic01.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic02.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic03.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic04.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic05.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic06.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-							</div>
-
-							<!-- Tab 2 -->
-							<div class="tab tab-2 flex flex-3">
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic06.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic05.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic04.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic03.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic02.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic01.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-							</div>
-
-							<!-- Tab 3 -->
-							<div class="tab tab-3 flex flex-3">
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic03.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic02.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic01.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic06.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic05.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-								<!-- Video Thumbnail -->
-								<div class="video col">
-									<div class="image fit">
-										<img src="images/pic04.jpg" alt="" />
-										<div class="arrow">
-											<div class="icon fa-play"></div>
-										</div>
-									</div>
-									<a href="generic" class="link"><span>Click Me</span></a>
-								</div>
-							</div>
-
-						</div>
 					</div>
 				</div>
 			</section>
 
 			<!-- Three -->
 			<section class="wrapper ">
-				<div class="inner">
+				<div id="div2" class="inner">
 					<header class="align-center">
 						<h2>Aliquam ipsum purus dolor</h2>
 						<p>Cras sagittis turpis sit amet est tempus, sit amet
@@ -326,39 +100,18 @@
 
 					<!-- 3 Column Video Section -->
 					<div class="flex flex-3">
+					<c:forEach var="i" items="${gcount}"> 
 						<div class="video col">
 							<div class="image fit">
-								<img src="images/pic09.jpg" alt="" />
+								<img src="movieImage/${i.image_number}" alt="" />
 								<div class="arrow">
 									<div class="icon fa-play"></div>
 								</div>
 							</div>
-							<p class="caption">Cras eget lacus sed mauris scelerisque
-								tincidunt</p>
+							<p class="caption">${i.title}</p>
 							<a href="generic" class="link"><span>Click Me</span></a>
 						</div>
-						<div class="video col">
-							<div class="image fit">
-								<img src="images/pic10.jpg" alt="" />
-								<div class="arrow">
-									<div class="icon fa-play"></div>
-								</div>
-							</div>
-							<p class="caption">Vivamus vulputate lacus non massa auctor
-								lobortis</p>
-							<a href="generic" class="link"><span>Click Me</span></a>
-						</div>
-						<div class="video col">
-							<div class="image fit">
-								<img src="images/pic11.jpg" alt="" />
-								<div class="arrow">
-									<div class="icon fa-play"></div>
-								</div>
-							</div>
-							<p class="caption">Nam eu nisi non ante sodales interdum a
-								vitae neque</p>
-							<a href="generic" class="link"><span>Click Me</span></a>
-						</div>
+					</c:forEach>
 					</div>
 				</div>
 			</section>
@@ -395,7 +148,7 @@
 							<li><a href="#">Massa amet lobortis vel.</a></li>
 							<li><a href="#">Nascetur nunc varius commodo.</a></li>
 						</ul>
-					</div>
+					</div>	
 				</div>
 			</div>
 			<div class="copyright">
@@ -416,4 +169,14 @@
 		</footer>
 	</form>
 </body>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	function fnMove(seq) {
+		var offset = $("#div" + seq).offset();
+		$('html, body').animate({
+			scrollTop : offset.top
+		}, 400);
+	}
+</script>
 </html>
