@@ -56,4 +56,10 @@ public class HomeController {
 	public String getLoginPage() throws Exception{
 		return "login";
 	}
+	
+	@RequestMapping("/signup")
+	public String getSignupPage() throws Exception{
+		return "signup";
+	}
+
 }

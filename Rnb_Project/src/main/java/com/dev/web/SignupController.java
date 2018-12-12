@@ -38,14 +38,14 @@ public class SignupController {
 	
 	//로그인
 	@RequestMapping(value="login_form.do", method = RequestMethod.POST)
-	public String login(@RequestParam(value="signin_id", required=false)String sign_id, @RequestParam(value="signin_pw", required=false)String sign_pw) throws Exception {
-		if(sign_pw.equals(signup.login(sign_id))) {
+	public String login(@RequestParam(value="id", required=false)String id, @RequestParam(value="password", required=false)String password) throws Exception {
+		if(password.equals(signup.login(id))) {
 			HashedMap<String, Object>map = new HashedMap<String, Object>();
-			map.put("sign_id", sign_id);
-			map.put("sign_pw", sign_pw);
-			System.out.println(sign_id + sign_pw);
-			String name = signup.findName(map);
-			System.out.println(name);
+			map.put("id", id);
+			map.put("password", password);
+//			System.out.println(sign_id + sign_pw);
+//			String name = signup.findName(map);
+//			System.out.println(name);
 			
 			return "redirect:main.do";
 		}

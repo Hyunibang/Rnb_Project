@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="signup" parameterType="customer">
 		insert into customer(id, password, name, phonenumber, age, gender, animation_count, movie_count)
-		values (#{signup_id}, #{signup_pw}, #{signup_name}, #{signup_phone}, #{signup_age}, #{gender}, #{animation_count}, #{movie_count})
+		values (#{id}, #{password}, #{name}, #{phonenumber}, #{age}, #{gender}, #{animation_count}, #{movie_count})
 	</insert>
 	
 	<select id="getList" resultType="customer">
@@ -16,13 +16,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="signin" parameterType="String" resultType="String">
 		select password
 		from customer
-		where id = #{signin_id}
+		where id = #{id}
 	</select>
 	
-	<select id="findName" parameterType="HashMap" resultType="String">
+	<!-- <select id="findName" parameterType="HashMap" resultType="String">
 		SELECT name
 		FROM customer
 		WHERE id=#{signin_id} AND password=#{signin_pw}
-	</select>
+	</select> -->
 
 </mapper>

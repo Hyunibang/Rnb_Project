@@ -29,13 +29,13 @@ public class SignupDao {
 //		return session.selectOne("checkId", bean);
 //	}
 	//로그인
-	public String login(String sign_id) throws Exception {
-		return session.selectOne("signin", sign_id);
+	public String login(String id) throws Exception {
+		return session.selectOne("signin", id);
 	}
 	
-	//이름찾기
-	public String findName(HashedMap<String, Object> map) throws Exception{
-		return session.selectOne("findName", map);
-	}
+//	//이름찾기
+//	public String findName(HashedMap<String, Object> map) throws Exception{
+//		return session.selectOne("findName", map);
+//	}
 
 }
