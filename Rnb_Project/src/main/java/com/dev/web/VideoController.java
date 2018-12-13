@@ -29,11 +29,11 @@ public class VideoController {
 		ModelAndView modelAndView = new ModelAndView();
 		List<VideoBean> gmain1 = video.suggestGrade1();
 		/*List<VideoBean> gmain2 = video.suggestGrade2();*/
-		List<VideoBean> gcount = video.suggestCount1();
+		/*List<VideoBean> gcount = video.suggestCount1();*/
 				
 		modelAndView.addObject("gmain1", gmain1);
 		/*modelAndView.addObject("gmain2", gmain2);*/
-		modelAndView.addObject("gcount", gcount);
+		/*modelAndView.addObject("gcount", gcount);*/
 		modelAndView.setViewName("home");
 	
 		return modelAndView;
@@ -44,6 +44,7 @@ public class VideoController {
 		
 		if(videoId.equals("venom,"))
 			model.addAttribute("videoAddr", "https://www.youtube.com/embed/SgxAx7E-jjE");
+//			customer.update();
 		else if(videoId.equals("amsoo,"))
 			model.addAttribute("videoAddr", "https://www.youtube.com/embed/dfnKOAmaQM8");
 		else if(videoId.equals("singleman,"))

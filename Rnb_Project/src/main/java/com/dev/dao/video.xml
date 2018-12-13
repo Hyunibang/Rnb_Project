@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE ranking = 2
 	</select> -->
 	
-	<select id="suggestCount1" resultType="video">
+<!-- 	<select id="suggestCount1" resultType="video">
 	select title, image_number
 	from video
 	where genre =(
@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from(
 	select count(*) as counting, v.genre as genre from customer c, video v where c.id = 'apple' and v.id = 'apple' group by v.genre order by counting desc))
 	where ranking = 1) and id = 'apple' AND ROWNUM <![CDATA[<]]> 4
-	</select>
+	</select> -->
 	
 	
 </mapper>
