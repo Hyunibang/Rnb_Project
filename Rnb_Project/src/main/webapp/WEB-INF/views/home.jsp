@@ -32,8 +32,8 @@
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="main.do">Home</a></li>
-				<li><a href="generic">Generic</a></li>
-				<li><a href="elements">Elements</a></li>
+				<li><a href="generic">Genre</a></li>
+				<li><a href="elements">Other</a></li>
 			</ul>
 		</nav>
 
@@ -52,7 +52,10 @@
 						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
 					</p>
 				</header>
-				<a href="#main" class="button big alt scrolly">Dignissim</a>
+				<!-- div1로 이동 -->
+				<input type="button" onclick="fnMove('1')" value="이번달 영화 추천" />
+				<!-- div2로 이동 -->
+				<input type="button" onclick="fnMove('2')" value="나에게 맞는 영상" />
 			</div>
 
 		</section>
@@ -62,7 +65,7 @@
 
 			<!-- One -->
 			<section class="wrapper style1">
-				<div class="inner">
+				<div id="div1" class="inner">
 					<header class="align-center">
 						<h2>이번달 영화 추천</h2>
 						<p>평점순</p>
@@ -88,7 +91,7 @@
 
 			<!-- Three -->
 			<section class="wrapper ">
-				<div class="inner">
+				<div id="div2" class="inner">
 					<header class="align-center">
 						<h2>Aliquam ipsum purus dolor</h2>
 						<p>Cras sagittis turpis sit amet est tempus, sit amet
@@ -166,4 +169,14 @@
 		</footer>
 	</form>
 </body>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	function fnMove(seq) {
+		var offset = $("#div" + seq).offset();
+		$('html, body').animate({
+			scrollTop : offset.top
+		}, 400);
+	}
+</script>
 </html>

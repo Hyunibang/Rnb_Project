@@ -47,19 +47,13 @@ public class HomeController {
 		return "elements";
 	}
 	
-	@RequestMapping("/index")
-	public String getHomePage() throws Exception{
-		return "index";
+	@RequestMapping("/view")
+	public String getViewPage() throws Exception{
+		return "view";
 	}
 	
-	@RequestMapping("/login")
-	public String getLoginPage() throws Exception{
-		return "login";
+	@RequestMapping("/wholePopularMovieList")
+	public String getwholePopularMovieListPage() throws Exception{
+		return "wholePopularMovieList";
 	}
-	
-	@RequestMapping("/signup")
-	public String getSignupPage() throws Exception{
-		return "signup";
-	}
-
 }

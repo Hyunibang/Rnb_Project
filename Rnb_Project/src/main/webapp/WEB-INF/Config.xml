@@ -5,14 +5,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration><!--DB설정(Connection)  -->
 	<typeAliases><!--vo객체의 별칭을 모아서 관리  -->
 		<typeAlias type="com.dev.bean.VideoBean" alias="video"/>
-		<typeAlias type="com.dev.bean.GradeBean" alias="grade"/>	
-		<typeAlias type="com.dev.bean.CustomerBean" alias="customer"/>
+		<typeAlias type="com.dev.bean.GradeBean" alias="grade"/>
 	</typeAliases>
 
 	<mappers>
-		
 		<mapper resource="com/dev/dao/video.xml"/>
 		<mapper resource="com/dev/dao/grade.xml"/>
-		<mapper resource="com/dev/dao/signup.xml"/>
 	</mappers>
 </configuration>

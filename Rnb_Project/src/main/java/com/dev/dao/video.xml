@@ -2,22 +2,13 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper	namespace="com.dev.bean.VideoBean"> 
-	
 	<sql id="grade">
-		SELECT ranking, title, genre, id, image_number, grade
 		FROM(
-			SELECT rank() over(order by grade desc) as ranking, v.title, v.genre, v.image_number, g.id, g.grade
-			FROM video v, grade g
-			WHERE v.video_id = g.video_id)
 	</sql>
-
 	<select id="suggestGrade1" resultType="video">
 		<include refid="grade" />
-		WHERE ranking between 1 and 2
 	</select>
 	
-<!-- 	<select id="suggestGrade2" resultType="video">
 		<include refid="grade" />
 		WHERE ranking = 2
 	</select> -->
