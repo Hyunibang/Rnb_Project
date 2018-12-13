@@ -16,14 +16,14 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/suggest.js" type="text/javascript"></script>
 
-<title>RnB_Project</title>
+<title>RnB_Project - Home</title>
 </head>
 <body>
 	<form action="home">
 		<!-- Header -->
 		<header id="header">
 			<h1>
-				<a href="main.do">Broadcast <span>by TEMPLATED</span></a>
+				<a href="main.do">RnB_Project</a>
 				<input name="userid" type="hidden" value="${userid }">
 			</h1>
 			<a href="#menu">Menu</a>
@@ -32,10 +32,10 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a>${username}님</a></li>
-				<li><a href="main.do">Home</a></li>
-				<li><a href="generic">Generic</a></li>
-				<li><a href="elements">Elements</a></li>
+				<li><a>${username}님 환영합니다!</a></li>
+				<li><a href="main.do">홈</a></li>
+				<li><a href="generic">장르</a></li>
+				<li><a href="setting">설정</a></li>
 			</ul>
 		</nav>
 
@@ -49,13 +49,16 @@
 			<div class="inner">
 			
 				<header>
-					<h1>${username}님 환영합니다.</h1>
+					<h1>추천, 맞춤을 한번에</h1>
 					<p>
-						Morbi eu purus eget urna interdum dignissim sed consectetur augue<br />
-						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
+						스마트폰, 노트북, TV, 태블릿. 어느 디바이스를 사용하더라도<br>
+						최고의 영상을 감상 하실 수 있습니다.						
 					</p>
 				</header>
-				<a href="#main" class="button big alt scrolly">Dignissim</a>
+				<!-- div1로 이동 -->
+				<input type="button" onclick="fnMove('1')" value="이번달 영화 추천" />
+				<!-- div2로 이동 -->
+				<input type="button" onclick="fnMove('2')" value="나에게 맞는 영상" />
 			</div>
 
 		</section>
@@ -65,7 +68,7 @@
 
 			<!-- One -->
 			<section class="wrapper style1">
-				<div class="inner">
+				<div id="div1" class="inner">
 					<header class="align-center">
 						<h2>이번달 영화 추천</h2>
 						<p>평점순</p>
@@ -80,7 +83,7 @@
 										<div class="icon fa-play"></div>
 									</div>
 								</div>
-								<p class="caption">${gm1.title}</p>
+								<%-- <p class="caption">${gm1.title}</p> --%>
 								<a href="generic" class="link"><span>Click Me</span></a>
 							</div>
 						</c:forEach>
@@ -91,11 +94,9 @@
 
 			<!-- Three -->
 			<section class="wrapper ">
-				<div class="inner">
+				<div id="div2" class="inner">
 					<header class="align-center">
-						<h2>Aliquam ipsum purus dolor</h2>
-						<p>Cras sagittis turpis sit amet est tempus, sit amet
-							consectetur purus tincidunt.</p>
+						<h2>${username}님의 맞춤 영상</h2>
 					</header>
 
 					<!-- 3 Column Video Section -->
@@ -108,7 +109,7 @@
 									<div class="icon fa-play"></div>
 								</div>
 							</div>
-							<p class="caption">${i.title}</p>
+							<%-- <p class="caption">${i.title}</p> --%>
 							<a href="generic" class="link"><span>Click Me</span></a>
 						</div>
 					</c:forEach>
@@ -121,32 +122,27 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">
-				<div class="flex flex-3">
+				<div class="flex flex-3" style="text-align:center;">
 					<div class="col">
-						<h3>Vestibullum</h3>
 						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
+							<li><a href="setting">자막 및 음성</a></li>
+							<li><a href="setting">미디어 센터</a></li>
+							<li><a href="setting">개인정보</a></li>
+							<li><a href="setting">문의하기</a></li>
 						</ul>
 					</div>
 					<div class="col">
-						<h3>Lobortis</h3>
 						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
+							<li><a href="setting">음성 지원</a></li>
+							<li><a href="setting">투자 정보</a></li>
+							<li><a href="setting">법적 고지</a></li>
 						</ul>
 					</div>
 					<div class="col">
-						<h3>Accumsan</h3>
 						<ul class="alt">
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
-							<li><a href="#">Vis id faucibus montes tempor</a></li>
-							<li><a href="#">Massa amet lobortis vel.</a></li>
-							<li><a href="#">Nascetur nunc varius commodo.</a></li>
+							<li><a href="setting">고객 센터</a></li>
+							<li><a href="setting">입사 정보</a></li>
+							<li><a href="setting">쿠키 설정</a></li>
 						</ul>
 					</div>	
 				</div>
@@ -169,4 +165,14 @@
 		</footer>
 	</form>
 </body>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	function fnMove(seq) {
+		var offset = $("#div" + seq).offset();
+		$('html, body').animate({
+			scrollTop : offset.top
+		}, 400);
+	}
+</script>
 </html>

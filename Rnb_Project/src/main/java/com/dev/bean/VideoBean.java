@@ -45,6 +45,7 @@ public class VideoBean {
 	public void setRanking(int ranking) {
 		this.ranking = ranking;
 	}
+	
 	@Override
 	public String toString() {
 		return "VideoBean [video_id=" + video_id + ", title=" + title + ", genre=" + genre + ", image_number="

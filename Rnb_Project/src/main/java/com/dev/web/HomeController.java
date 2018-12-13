@@ -22,18 +22,9 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
+
 	@RequestMapping("/home")
 	public String home(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-		
 		return "redirect:main.do";
 	}
 	
@@ -42,9 +33,9 @@ public class HomeController {
 		return "generic";
 	}
 	
-	@RequestMapping("/elements")
-	public String getElementsPage() throws Exception{
-		return "elements";
+	@RequestMapping("/setting")
+	public String getSettingPage() throws Exception{
+		return "setting";
 	}
 	
 	@RequestMapping("/index")

@@ -3,5 +3,21 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper	namespace="com.dev.bean.GradeBean">
+
+	<insert id="insertGrade" parameterType="HashMap">
+		INSERT INTO grade(video_id, id, grade_id, grade)
+		VALUES (#{video_id}, #{id}, test_grade_sequence.NEXTVAL, #{grade})
+	</insert>
+	
+	<insert id="insertReview" parameterType="HashMap">
+		INSERT INTO review(id, video_id, review_id, context)
+		VALUES (#{id}, #{video_id}, test_review_sequence.NEXTVAL, #{context})
+	</insert>
+	
+	<select id="selectGrade" parameterType="int" resultType="int">
+		SELECT SUM(grade)
+		FROM grade
+		WHERE video_id = #{video_id}
+	</select>
 	
 </mapper>

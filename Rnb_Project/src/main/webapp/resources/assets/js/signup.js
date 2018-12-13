@@ -5,32 +5,6 @@ function signupCheck(){
 	var getName = RegExp(/^[가-힣]+$/);
 	var getPhone = RegExp(/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/);
 	var getAge = RegExp(/[0-9]/);
-//중복체크
-//	var userId = $("#signup_id").val();
-//	var idData = {"signup_id" : userId}
-//	
-//	if(userId.length < 1){
-//		alert("아이디를 입력 해 주세요.");
-//		$("#signup_id").focus();
-//		return false;
-//	} else if(userId.length < 4){
-//		alert("아이디는 영문, 숫자 최소 4글자에서 최대12글자 입니다.");
-//		return false;
-//	} else {
-//		$.ajax({
-//			type : "POST",
-//			url : "/dev/checkId.do",
-//			data : idData,
-//			dataType : "json",
-//			success : function(result){
-//				if(result == 1){
-//					alert("이미 존재하는 아이디입니다.");
-//					$("#signup_id").focus();
-//					return false;
-//				}
-//			}
-//		});
-//	}
 
 	if($("#id").val() == ""){
 		alert("아이디를 입력 해 주세요.");

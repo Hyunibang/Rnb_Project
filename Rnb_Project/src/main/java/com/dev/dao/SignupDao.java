@@ -20,6 +20,7 @@ public class SignupDao {
 	public List<CustomerBean> getList() throws Exception {
 		return session.selectList("getList");
 	}
+	
 	public int insert(CustomerBean bean) throws Exception {
 		return session.insert("signup", bean);
 	}

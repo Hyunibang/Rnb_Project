@@ -6,10 +6,10 @@ public class GradeBean {
 	private String id;
 	private int grade_id;
 	private int grade;
+	
 	public int getVideo_id() {
 		return video_id;
 	}
-	
 	public void setVideo_id(int video_id) {
 		this.video_id = video_id;
 	}

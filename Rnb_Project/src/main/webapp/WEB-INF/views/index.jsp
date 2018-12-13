@@ -19,15 +19,16 @@
 	</header>
 
 	
+<!-- 	<section id="banner" data-video="images/banner" > -->
 	<section id="banner" style="background: url('images/background.jpg');">
 		<div class="inner">
 			<header>
-				<h1>ㅁㅁㅁ</h1>
+				<h1>언제 어디서나 자유롭게</h1>
 				<p>
-					Watch TV Shows Online, Watch Movies Online<br /> ㄴㄴㅇㅇㄹㄹ
+					다양한 디바이스에서 시청하고 부담 없이 해지하세요.
 				</p>
 			</header>
-			<a href="login" class="button big alt scrolly">Login</a>
+			<a href="login" class="button big alt scrolly" style="background-color:red;">Login</a>
 		</div>
 
 

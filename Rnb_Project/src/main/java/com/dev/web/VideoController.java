@@ -27,7 +27,7 @@ public class VideoController {
 	private VideoDao video;
 	
 	@Resource(name = "GradeDao")
-	private GradeDao grade;
+	private GradeDao gradedao;
 	
 	@Resource(name = "SignupDao")
 	private SignupDao sign;
@@ -36,6 +36,7 @@ public class VideoController {
 	@RequestMapping(value = "main.do")
 	public ModelAndView mainStart(HttpSession session){
 		ModelAndView modelAndView = new ModelAndView();
+		List<VideoBean> gmain1 = video.suggestGrade1();
 		String userid = (String) session.getAttribute("userid");
 		
 		HashedMap<String, Object> map = new HashedMap<String, Object>();
@@ -76,8 +77,8 @@ public class VideoController {
 			modelAndView.addObject("showMovies", showMovies);
 		}
 		
+		modelAndView.addObject("gmain1", gmain1);
 		modelAndView.setViewName("home");
-	
 		return modelAndView;
 	}
 	
@@ -91,6 +92,9 @@ public class VideoController {
 		if(movie.equals(video.findGenre(videoId))) {
 			try {
 				sign.updateMovieCount(userid);
+				int video_id = video.findVideoId(videoId);	//디비의 비디오 아이디 값 리턴
+				model.addAttribute("videoid", video.findVideoId(videoId));
+				model.addAttribute("totalgrade", gradedao.selectGrade(video_id)/2);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -98,6 +102,9 @@ public class VideoController {
 		}else {
 			try {
 				sign.updateAniCount(userid);
+				int video_id = video.findVideoId(videoId);	//디비의 비디오 아이디 값 리턴
+				model.addAttribute("videoid", video.findVideoId(videoId));
+				model.addAttribute("totalgrade", gradedao.selectGrade(video_id)/2);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -125,6 +132,25 @@ public class VideoController {
 			model.addAttribute("videoAddr", "https://www.youtube.com/embed/zON6Mu9_PC0");
 		else if(videoId.equals("bossbaby,"))
 			model.addAttribute("videoAddr", "https://www.youtube.com/embed/dQbpxuxMPic");
+		
+		return "view";
+	}
+	
+	@RequestMapping(value="view.do", method = RequestMethod.POST)
+	public String setGradeAndReview(@RequestParam(value="videoid", required=false)int videoid, @RequestParam(value="userid", required=false)String userid
+									,@RequestParam(value="grade", required=false)int grade, @RequestParam(value="comment", required=false)String comment) {
+		
+		HashedMap<String, Object>map = new HashedMap<String, Object>();
+		map.put("video_id", videoid);
+		map.put("id", userid);
+		map.put("grade", grade);
+		gradedao.insertGrade(map);
+		
+		HashedMap<String, Object>map2 = new HashedMap<String, Object>();
+		map2.put("id", userid);
+		map2.put("video_id", videoid);
+		map2.put("context", comment);
+		gradedao.insertReview(map2);
 		
 		return "view";
 	}

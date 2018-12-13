@@ -27,8 +27,6 @@ function signinCheck(){
 		return false;
 	}
 	
-	
-	//alert("로그인 하였습니다.");
 	loginform.action = "/dev/login_form.do";
 	loginform.submit();
 }

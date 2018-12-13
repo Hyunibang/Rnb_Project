@@ -13,15 +13,20 @@ public class VideoDao extends SqlSessionDaoSupport{
 		return this.getSqlSession().selectList("suggestGrade1");
 	}
 	
-/*	public List<VideoBean> suggestCount1(){
+	public List<VideoBean> suggestCount1(){
 		return this.getSqlSession().selectList("suggestCount1");
-	}*/
+	}
 	
-	
-	//�̹��� Ŭ�� ��, �ش� ������ �帣 ã�� - ��ȭ/�ִϸ��̼�
+	//이미지 클릭 시, 해당 영상의 장르 찾기 - 영화/애니메이션
 	public String findGenre(String title) {
 		return this.getSqlSession().selectOne("findGenre", title);
 	}
+	
+	//비디오 아이디 추출
+	public int findVideoId(String title) {
+		return this.getSqlSession().selectOne("findVideoId", title);
+	}
+	
 	
 	public List<VideoBean> showMovies(HashedMap<String, Object> map) {
 		return this.getSqlSession().selectList("showMovies", map);

@@ -8,7 +8,7 @@
 -->
 <html>
 <head>
-<title>Generic - Broadcast by TEMPLATED</title>
+<title>RnB_Project - Gener</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,7 +22,7 @@
 		<!-- Header -->
 		<header id="header">
 			<h1>
-				<a href="#">Broadcast <span>by TEMPLATED</span></a>
+				<a href="main.do">RnB_Project</a>
 				<input name="userid" type="text" value="${userid }">
 			</h1>
 			<a href="#menu">Menu</a>
@@ -31,14 +31,14 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<h1><input type="text" name="username" value="${username}님"></h1>
-				<li><a href="main.do">Home</a></li>
-				<li><a href="generic">Genre</a></li>
+				<h1>${username}님 환영합니다!</h1>
+				<li><a href="main.do">홈으로</a></li>
+				<li><a href="generic">장르</a></li>
 					<ul>
-						<li><a onclick="fnMove('1')" href="#">Movie</a></li>
-						<li><a onclick="fnMove('2')" href="#">Animation</a></li>
+						<li><a onclick="fnMove('1')" href="#">영화</a></li>
+						<li><a onclick="fnMove('2')" href="#">애니메이션</a></li>
 					</ul>
-				<li><a href="elements">Other</a></li>
+				<li><a href="setting">설정</a></li>
 			</ul>
 		</nav>
 
@@ -228,7 +228,6 @@
 			$(document).ready(function() {
 				$('.link').on('click', function() {
 					var click_id = $(this).attr('id');
-					alert(click_id);
 					$('#videoId').val(click_id);
 					$("form[name='generic']").submit();
 				});
