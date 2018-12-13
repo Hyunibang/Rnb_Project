@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.dev.bean.CustomerBean">
+
+	<insert id="signup" parameterType="customer">
+		insert into customer(id, password, name, phonenumber, age, gender, animation_count, movie_count)
+		values (#{id}, #{password}, #{name}, #{phonenumber}, #{age}, #{gender}, #{animation_count}, #{movie_count})
+	</insert>
+	
+	<select id="getList" resultType="customer">
+		select * from customer
+	</select>
+	
+	<select id="signin" parameterType="String" resultType="String">
+		select password
+		from customer
+		where id = #{id}
+	</select>
+	
+	 <select id="findName" parameterType="HashMap" resultType="String">
+		SELECT name
+		FROM customer
+		WHERE id=#{id} AND password=#{password}
+	</select>
+	
+	<update id="updateMovieCount" parameterType="String">
+		UPDATE customer
+		SET movie_count = movie_count+1
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateAniCount" parameterType="String">
+		UPDATE customer
+		SET animation_count = animation_count+1
+		WHERE id = #{id}
+	</update>
+	
+	<select id="suggestAniCount" parameterType="String" resultType="int">
+		SELECT animation_count 
+		FROM customer 
+		WHERE id = #{id}
+	</select>
+	
+	<select id="suggestMovieCount" parameterType="String" resultType="int">
+		SELECT movie_count 
+		FROM customer 
+		WHERE id = #{id}
+	</select>
+
+</mapper>

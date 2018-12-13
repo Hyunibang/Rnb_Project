@@ -2,28 +2,43 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="com.dev.bean.VideoBean"> 
+	
 	<sql id="grade">
+		SELECT ranking, title, genre, id, image_number, grade
 		FROM(
+			SELECT rank() over(order by grade desc) as ranking, v.title, v.genre, v.image_number, g.id, g.grade
+			FROM video v, grade g
+			WHERE v.video_id = g.video_id)
 	</sql>
+
 	<select id="suggestGrade1" resultType="video">
 		<include refid="grade" />
+		WHERE ranking between 1 and 2
 	</select>
 	
-		<include refid="grade" />
-		WHERE ranking = 2
-	</select> -->
-	
 <!-- 	<select id="suggestCount1" resultType="video">
-	select title, image_number
-	from video
-	where genre =(
-	select genre
-	from(
-	select rank() over(order by counting desc) ranking, genre
-	from(
-	select count(*) as counting, v.genre as genre from customer c, video v where c.id = 'apple' and v.id = 'apple' group by v.genre order by counting desc))
-	where ranking = 1) and id = 'apple' AND ROWNUM <![CDATA[<]]> 4
+		select title, image_number
+		from video
+		where genre =(
+			select genre
+			from(
+				select rank() over(order by counting desc) ranking, genre
+				from(
+					select count(*) as counting, v.genre as genre from customer c, video v where c.id = 'apple' and v.id = 'apple' group by v.genre order by counting desc))
+					where ranking = 1) and id = 'apple' AND ROWNUM <![CDATA[<]]> 4
 	</select> -->
 	
+	<select id="findGenre" parameterType="String" resultType="String">
+		SELECT genre
+		FROM video
+		WHERE title = REPLACE(#{title},',','')
+	</select>
 	
+	<select id="showMovies" resultType="video" parameterType="map">
+		SELECT title, image_number
+		FROM video, customer
+		WHERE id = #{id} and genre = #{genre} and ROWNUM <![CDATA[<]]> 4
+	</select> 
+
 </mapper>

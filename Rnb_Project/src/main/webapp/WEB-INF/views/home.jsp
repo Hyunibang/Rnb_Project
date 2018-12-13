@@ -16,14 +16,15 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/suggest.js" type="text/javascript"></script>
 
-<title>Insert title here</title>
+<title>RnB_Project</title>
 </head>
 <body>
 	<form action="home">
 		<!-- Header -->
 		<header id="header">
 			<h1>
-				<a href="#">Broadcast <span>by TEMPLATED</span></a>
+				<a href="main.do">Broadcast <span>by TEMPLATED</span></a>
+				<input name="userid" type="hidden" value="${userid }">
 			</h1>
 			<a href="#menu">Menu</a>
 		</header>
@@ -31,9 +32,10 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
+				<li><a>${username}님</a></li>
 				<li><a href="main.do">Home</a></li>
-				<li><a href="generic">Genre</a></li>
-				<li><a href="elements">Other</a></li>
+				<li><a href="generic">Generic</a></li>
+				<li><a href="elements">Elements</a></li>
 			</ul>
 		</nav>
 
@@ -45,6 +47,7 @@
 			-->
 		<section id="banner" data-video="images/banner">
 			<div class="inner">
+			
 				<header>
 					<h1>${username}님 환영합니다.</h1>
 					<p>
@@ -52,10 +55,7 @@
 						vivamus vitae libero in nulla iaculis eleifend non sit amet nulla.
 					</p>
 				</header>
-				<!-- div1로 이동 -->
-				<input type="button" onclick="fnMove('1')" value="이번달 영화 추천" />
-				<!-- div2로 이동 -->
-				<input type="button" onclick="fnMove('2')" value="나에게 맞는 영상" />
+				<a href="#main" class="button big alt scrolly">Dignissim</a>
 			</div>
 
 		</section>
@@ -65,7 +65,7 @@
 
 			<!-- One -->
 			<section class="wrapper style1">
-				<div id="div1" class="inner">
+				<div class="inner">
 					<header class="align-center">
 						<h2>이번달 영화 추천</h2>
 						<p>평점순</p>
@@ -91,7 +91,7 @@
 
 			<!-- Three -->
 			<section class="wrapper ">
-				<div id="div2" class="inner">
+				<div class="inner">
 					<header class="align-center">
 						<h2>Aliquam ipsum purus dolor</h2>
 						<p>Cras sagittis turpis sit amet est tempus, sit amet
@@ -100,7 +100,7 @@
 
 					<!-- 3 Column Video Section -->
 					<div class="flex flex-3">
-					<c:forEach var="i" items="${gcount}"> 
+					<c:forEach var="i" items="${showMovies}"> 
 						<div class="video col">
 							<div class="image fit">
 								<img src="movieImage/${i.image_number}" alt="" />
@@ -169,14 +169,4 @@
 		</footer>
 	</form>
 </body>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
-	function fnMove(seq) {
-		var offset = $("#div" + seq).offset();
-		$('html, body').animate({
-			scrollTop : offset.top
-		}, 400);
-	}
-</script>
 </html>

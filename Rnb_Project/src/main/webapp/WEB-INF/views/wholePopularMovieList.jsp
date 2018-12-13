@@ -31,6 +31,7 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
+				<h1>${username}님 환영합니다.</h1>
 				<li><a href="home">Home</a></li>
 				<li><a href="generic">Generic</a></li>
 				<li><a href="elements">Elements</a></li>

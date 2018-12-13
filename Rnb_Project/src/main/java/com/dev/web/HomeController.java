@@ -34,7 +34,7 @@ public class HomeController {
 //		
 //		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "redirect:main.do";
 	}
 	
 	@RequestMapping("/generic")
@@ -47,13 +47,19 @@ public class HomeController {
 		return "elements";
 	}
 	
-	@RequestMapping("/view")
-	public String getViewPage() throws Exception{
-		return "view";
+	@RequestMapping("/index")
+	public String getHomePage() throws Exception{
+		return "index";
 	}
 	
-	@RequestMapping("/wholePopularMovieList")
-	public String getwholePopularMovieListPage() throws Exception{
-		return "wholePopularMovieList";
+	@RequestMapping("/login")
+	public String getLoginPage() throws Exception{
+		return "login";
 	}
+	
+	@RequestMapping("/signup")
+	public String getSignupPage() throws Exception{
+		return "signup";
+	}
+
 }

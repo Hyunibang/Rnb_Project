@@ -23,6 +23,7 @@
 		<header id="header">
 			<h1>
 				<a href="#">Broadcast <span>by TEMPLATED</span></a>
+				<input name="userid" type="text" value="${userid }">
 			</h1>
 			<a href="#menu">Menu</a>
 		</header>
@@ -30,7 +31,8 @@
 		<!-- Nav -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a href="home">Home</a></li>
+				<h1><input type="text" name="username" value="${username}님"></h1>
+				<li><a href="main.do">Home</a></li>
 				<li><a href="generic">Genre</a></li>
 					<ul>
 						<li><a onclick="fnMove('1')" href="#">Movie</a></li>
@@ -135,8 +137,8 @@
 								<div id="bxsliderAnimation" class="bxslider4">
 									<div class="video col">
 										<div class="image fit">
-											<input id="id" type="hidden" value="venom"> <img
-												src="animationImage/ani_bossbaby.jpg" alt="" />
+											<input id="id" type="hidden" value="venom">
+											 <img src="animationImage/ani_bossbaby.jpg" alt="" />
 											<div class="arrow">
 												<div class="icon fa-play"></div>
 											</div>
