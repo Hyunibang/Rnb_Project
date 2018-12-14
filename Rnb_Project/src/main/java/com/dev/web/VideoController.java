@@ -141,8 +141,10 @@ public class VideoController {
 	}
 	
 	@RequestMapping(value="view.do", method = RequestMethod.POST)
-	public String setGradeAndReview(@RequestParam(value="videoid", required=false)int videoid, @RequestParam(value="userid", required=false)String userid
+	public String setGradeAndReview(Model model, @RequestParam(value="videoid", required=false)int videoid, @RequestParam(value="userid", required=false)String userid
 									,@RequestParam(value="grade", required=false)int grade, @RequestParam(value="comment", required=false)String comment) {
+		
+		model.addAttribute("userreview", review.selectReview(videoid));
 		
 		HashedMap<String, Object>map = new HashedMap<String, Object>();
 		map.put("video_id", videoid);
@@ -156,8 +158,6 @@ public class VideoController {
 		map2.put("context", comment);
 		gradedao.insertReview(map2);
 		
-		
-		
-		return "view";
+		return "generic";
 	}
 }
