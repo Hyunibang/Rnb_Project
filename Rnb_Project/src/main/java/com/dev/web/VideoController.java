@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dev.bean.CustomerBean;
 import com.dev.bean.VideoBean;
 import com.dev.dao.GradeDao;
+import com.dev.dao.ReviewDao;
 import com.dev.dao.SignupDao;
 import com.dev.dao.VideoDao;
 
@@ -32,6 +33,8 @@ public class VideoController {
 	@Resource(name = "SignupDao")
 	private SignupDao sign;
 	
+	@Resource(name = "ReviewDao")
+	private ReviewDao review;
 	
 	@RequestMapping(value = "main.do")
 	public ModelAndView mainStart(HttpSession session){
@@ -86,7 +89,6 @@ public class VideoController {
 	public String selectVideo(@RequestParam(value="videoId", required=false)String videoId, Model model,
 							  @RequestParam(value="userid", required=false)String userid) {
 		
-		
 		String movie = "Movie";
 		
 		if(movie.equals(video.findGenre(videoId))) {
@@ -95,6 +97,7 @@ public class VideoController {
 				int video_id = video.findVideoId(videoId);	//디비의 비디오 아이디 값 리턴
 				model.addAttribute("videoid", video.findVideoId(videoId));
 				model.addAttribute("totalgrade", gradedao.selectGrade(video_id)/2);
+				model.addAttribute("userreview", review.selectReview(video_id));	//후기를 남긴 유저 아디이 및 후기
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -105,6 +108,7 @@ public class VideoController {
 				int video_id = video.findVideoId(videoId);	//디비의 비디오 아이디 값 리턴
 				model.addAttribute("videoid", video.findVideoId(videoId));
 				model.addAttribute("totalgrade", gradedao.selectGrade(video_id)/2);
+				model.addAttribute("userreview", review.selectReview(video_id));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -151,6 +155,8 @@ public class VideoController {
 		map2.put("video_id", videoid);
 		map2.put("context", comment);
 		gradedao.insertReview(map2);
+		
+		
 		
 		return "view";
 	}

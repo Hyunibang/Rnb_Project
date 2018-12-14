@@ -88,8 +88,13 @@
 								<option class="sd" value="2">2</option>
 								<option class="sd" value="1">1</option>
 							</select>
-						<p class="caption">한줄후기</p>
-						<textarea name="comment" id="comment" rows="11" cols="60"></textarea><br>
+						<p class="caption">한줄후기 남기기</p>
+						<textarea name="comment" id="comment" rows="10" cols="2"></textarea><br>
+						<p class="caption">남이 쓴 후기</p>
+						<c:forEach var="i" items="${userreview}">
+							<input type="text" value="${i.id } : ${i.context}" readonly style="font-weight: bold;">
+							<%-- <input type="text" value="${i.context }"> --%>
+						</c:forEach>
 						<input id="grade" name="grade" type="hidden">
 						<input id="grade_submit" class="grade_submit" type="button" value="확인">
 					</div>

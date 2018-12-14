@@ -7,12 +7,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.dev.bean.VideoBean" alias="video"/>
 		<typeAlias type="com.dev.bean.GradeBean" alias="grade"/>	
 		<typeAlias type="com.dev.bean.CustomerBean" alias="customer"/>
+		<typeAlias type="com.dev.bean.ReviewBean" alias="review"/>
 	</typeAliases>
 
 	<mappers>
-		
 		<mapper resource="com/dev/dao/video.xml"/>
 		<mapper resource="com/dev/dao/grade.xml"/>
 		<mapper resource="com/dev/dao/signup.xml"/>
+		<mapper resource="com/dev/dao/review.xml"/>
 	</mappers>
 </configuration>

@@ -1,7 +1,11 @@
 package com.dev.dao;
 
+import java.util.List;
+
 import org.apache.commons.collections4.map.HashedMap;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import com.dev.bean.ReviewBean;
 
 public class GradeDao extends SqlSessionDaoSupport{
 	
